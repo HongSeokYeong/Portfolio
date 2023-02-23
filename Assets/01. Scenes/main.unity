@@ -1125,10 +1125,6 @@ MonoBehaviour:
   animator: {fileID: 1993737469}
   mainCameraTransform: {fileID: 961739753}
   input: {fileID: 1993737466}
-  cameraUtility:
-    virtualCamera: {fileID: 721177686}
-    defaultHorizontalWaitTime: 0
-    defaultHorizontalRecenteringTime: 4
   animationdata:
     groundedParameterName: Grounded
     movingParameterName: Moving
@@ -1173,7 +1169,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 1
-  m_Constraints: 80
+  m_Constraints: 84
   m_CollisionDetection: 1
 --- !u!95 &1993737469 stripped
 Animator:
@@ -1206,7 +1202,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 1
+  m_Radius: 0.22
+  m_Height: 1.8
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.88, z: 0}

@@ -7,6 +7,7 @@ public class PlayerMovementState : IState
 {
     protected PlayerStateMachine stateMachine;
     protected PlayerGroundedData groundedData;
+    protected PlayerAirborneData airborneData;
 
     public PlayerMovementState(PlayerStateMachine playerStateMachine)
     {
@@ -374,35 +375,6 @@ public class PlayerMovementState : IState
     {
 
     }
-
-    protected void UpdateCameraRecenteringState(Vector2 movementInput)
-    {
-        if (movementInput == Vector2.zero)
-        {
-            return;
-        }
-
-        float cameraVericalAngle = stateMachine.player.mainCameraTransform.eulerAngles.x;
-
-        if (cameraVericalAngle >= 270)
-        {
-            cameraVericalAngle -= 360f;
-        }
-
-        cameraVericalAngle = Mathf.Abs(cameraVericalAngle);
-    }
-
-    protected void EnableCameraRecentering(float waitTime = -1f, float recenteringTime = -1f)
-    {
-        float movementSpeed = GetMovementSpeed();
-
-        if (movementSpeed == 0f)
-        {
-            movementSpeed = stateMachine.player.playerData.groundedData.baseSpeed;
-        }
-
-        //stateMachine.player.cameraUtility.EnableRecentering(waitTime, recenteringTime, stateMachine.player.playerData.groundedData.baseSpeed, movementSpeed);
-    }
     #endregion
 
     #region Input Methods
@@ -414,16 +386,15 @@ public class PlayerMovementState : IState
 
     protected virtual void OnMovementCanceled(InputAction.CallbackContext context)
     {
+        stateMachine.ChangeState(stateMachine.idleState);
     }
 
     protected virtual void OnMovementPerformed(InputAction.CallbackContext context)
     {
-        UpdateCameraRecenteringState(context.ReadValue<Vector2>());
     }
 
     private void OnMouseMovementStarted(InputAction.CallbackContext context)
     {
-        UpdateCameraRecenteringState(stateMachine.player.reusableData.movementInput);
     }
     #endregion    
 }

@@ -24,16 +24,28 @@ public class PlayerGroundedState : PlayerMovementState
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
+
+        // 이걸로 걷기 구현 해야한다.
+        if(stateMachine.player.input.playerActions.Walk.IsPressed())
+        {
+        }
     }
 
+    // 땅에서의 스테이트라서 점프랑 대쉬를 추가해줘야한다.
     protected override void AddInputActionsCallbacks()
     {
         base.AddInputActionsCallbacks();
+
+        stateMachine.player.input.playerActions.Jump.started += OnJumpStarted;
+        stateMachine.player.input.playerActions.Dash.started += OnDashStarted;
     }
 
     protected override void RemoveInputActionsCallbacks()
     {
         base.RemoveInputActionsCallbacks();
+
+        stateMachine.player.input.playerActions.Jump.started -= OnJumpStarted;
+        stateMachine.player.input.playerActions.Dash.started -= OnDashStarted;
     }
 
     protected virtual void OnMove()
@@ -74,12 +86,12 @@ public class PlayerGroundedState : PlayerMovementState
 
     protected virtual void OnDashStarted(InputAction.CallbackContext context)
     {
-        //stateMachine.ChangeState(stateMachine.dashingState);
+        //stateMachine.ChangeState(stateMachine.dashState);
     }
 
     protected virtual void OnJumpStarted(InputAction.CallbackContext context)
     {
-        //stateMachine.ChangeState(stateMachine.jumpingState);
+        //stateMachine.ChangeState(stateMachine.jumpState);
     }
 
     protected override void OnMovementPerformed(InputAction.CallbackContext context)

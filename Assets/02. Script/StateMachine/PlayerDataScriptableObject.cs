@@ -6,4 +6,6 @@ using UnityEngine;
 public class PlayerDataScriptableObject : ScriptableObject
 {
     public PlayerGroundedData groundedData;
+
+    public PlayerAirborneData airborneData;
 }
