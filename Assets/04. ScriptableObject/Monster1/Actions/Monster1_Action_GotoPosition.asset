@@ -12,5 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e12d5ecc23cd7524ba6dd7e17eb8dcb4, type: 3}
   m_Name: Monster1_Action_GotoPosition
   m_EditorClassIdentifier: 
-  state: 0
+  state: 2
   started: 0
+  blackboard: {fileID: 0}
+  speed: 5
+  stoppingDistance: 0.1
+  updateRotation: 1
+  acceleration: 40
+  tolerance: 1

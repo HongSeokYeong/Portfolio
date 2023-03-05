@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6ee01218c650ad42bb6f034c9cffdaa, type: 3}
-  m_Name: Monster1_Composite_Sequencer 1
+  m_Script: {fileID: 11500000, guid: 8a097fb2a7e1ba9489474bc8c5a2ab15, type: 3}
+  m_Name: Monster1_Action_SearchPosition
   m_EditorClassIdentifier: 
-  state: 0
+  state: 2
   started: 0
-  childNodeList:
-  - {fileID: 11400000, guid: d36f00bc798508e409708ff718c53736, type: 2}
+  blackboard: {fileID: 0}
+  randomRange: {x: 100, y: 100}

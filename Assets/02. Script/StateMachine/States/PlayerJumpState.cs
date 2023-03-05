@@ -18,10 +18,12 @@ public class PlayerJumpState : PlayerAirborneState
     {
         base.Enter();
 
-        stateMachine.player.reusableData.movementSpeedModifier = 0f;
+        //stateMachine.player.reusableData.movementSpeedModifier = 0f;
         stateMachine.player.reusableData.movementDecelerationForce = airborneData.decelerationForce;
 
         shouldKeepRotating = stateMachine.player.reusableData.movementInput != Vector2.zero;
+
+        StartAnimation(stateMachine.player.animationdata.jumpParameterHash);
 
         Jump();
     }
@@ -33,6 +35,8 @@ public class PlayerJumpState : PlayerAirborneState
         SetBaseRotationData();
 
         canStartFalling = false;
+
+        StopAnimation(stateMachine.player.animationdata.jumpParameterHash);
     }
 
     public override void Update()
@@ -49,7 +53,7 @@ public class PlayerJumpState : PlayerAirborneState
             return;
         }
 
-        //stateMachine.ChangeState(stateMachine.fallingState);
+        stateMachine.ChangeState(stateMachine.fallState);
     }
 
     public override void PhysicsUpdate()

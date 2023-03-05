@@ -11,11 +11,11 @@ public abstract class Node : ScriptableObject
 
     // Context는 각 오브젝트에 맞게 새로 만들어야 할것 같다
     // ex) OrcContext, TrollContext 등등
-    //[HideInInspector] public Context context;
+    [HideInInspector] public Context context;
 
     // BlackBoard도 마찬가지로 각 타입에 맞는 BlackBoard를 만들수 있게 해야할것 같다.
     // ex) OrcBlackBoard, TrollBlackBoard
-    //[HideInInspector] public Blackboard blackboard;
+    [HideInInspector] public BlackBoard blackboard;
 
     public E_State Update()
     {

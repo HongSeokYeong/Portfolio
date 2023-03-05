@@ -15,20 +15,6 @@ MonoBehaviour:
   groundedData:
     baseSpeed: 5
     groundToFallRayDistance: 1
-    sideWayCameraRecenteringData:
-    - minimumAngle: 0
-      maximumAngle: 80
-      waitTime: -1
-      recenteringTime: -1
-    - minimumAngle: 80
-      maximumAngle: 90
-      waitTime: 0
-      recenteringTime: 0.3
-    backwardCameraRecenteringData:
-    - minimumAngle: 80
-      maximumAngle: 90
-      waitTime: 0
-      recenteringTime: 0.5
     slopeSpeedAngles:
       serializedVersion: 2
       m_Curve:
@@ -55,17 +41,7 @@ MonoBehaviour:
       m_RotationOrder: 4
     baseTargetRotationReachTime: {x: 0, y: 0.14, z: 0}
     baseTurnSpeed: 20
-    idleBackwardsCameraRecenteringData:
-    - minimumAngle: 80
-      maximumAngle: 90
-      waitTime: 0.25
-      recenteringTime: 0.5
     walkSpeedModifier: 0.225
-    walkBackwardsCameraRecenteringData:
-    - minimumAngle: 80
-      maximumAngle: 90
-      waitTime: -1
-      recenteringTime: -1
     runSpeedModifier: 6.32
     dashSpeedModifier: 2
     dashTargetRotationReachTime: {x: 0, y: 0.02, z: 0}
@@ -80,3 +56,134 @@ MonoBehaviour:
     runStopDecelerationForce: 6.5
     hardStopDecelerationForce: 5
     rollSpeedModifier: 1
+  airborneData:
+    jumpToGroundRayDistance: 2
+    jumpForceModifierOnSlopeUpwards:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.0892608
+        value: 1
+        inSlope: -0.006278019
+        outSlope: -0.006278019
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 20
+        value: 0.75
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 35.1
+        value: 0.5
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 75.1
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 90
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    jumpForceModifierOnSlopeDownwards:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.0892608
+        value: 1
+        inSlope: -0.006278019
+        outSlope: -0.006278019
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 20
+        value: 0.75
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 35.1
+        value: 0.5
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 75.1
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 90
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    TargetRotationReachTime: {x: 0, y: 0.02, z: 0}
+    turnSpeed: 60
+    stationaryForce: {x: 0, y: 5, z: 0}
+    weakForce: {x: 1, y: 5, z: 1}
+    mediumForce: {x: 3.5, y: 5, z: 3.5}
+    strongForce: {x: 5, y: 5, z: 5}
+    decelerationForce: 1.5
+    fallSpeedLimit: 10
+    minimumDistanceToBeConsideredHardFall: 3

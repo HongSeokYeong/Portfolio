@@ -47,8 +47,6 @@ public class Player : MonoBehaviour
 
         animationdata.Initialize();
         playerStateMachine = new PlayerStateMachine(this);
-
-        //CameraShake = Managers.Game.PlayerVirtualCamera.GetComponent<CameraShake>();
     }
 
     protected virtual void Start()
@@ -76,6 +74,16 @@ public class Player : MonoBehaviour
         playerStateMachine?.PhysicsUpdate();
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        playerStateMachine?.OnCollisionEnter(collision);
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        playerStateMachine?.OnCollisionExit(collision);  
+    }
+
     private void OnTriggerEnter(Collider collider)
     {
         playerStateMachine?.OnTriggerEnter(collider);
@@ -99,14 +107,6 @@ public class Player : MonoBehaviour
     public virtual void OnMovementStateAnimationTransitionEvent()
     {
         playerStateMachine?.OnAnimationTransitionEvent();
-    }
-
-    /// <summary>
-    /// 공통 카메라 흔들림 효과
-    /// </summary>
-    public virtual void ShakeCamera(float intensity, float duration)
-    {
-        //CameraShake?.ShakeCamera(intensity, duration);
     }
 
     public bool IsGroundLayer(int layer)

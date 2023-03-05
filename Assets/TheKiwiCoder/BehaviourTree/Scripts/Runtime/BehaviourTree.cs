@@ -6,9 +6,11 @@ using UnityEditor;
 #endif
 
 
-namespace TheKiwiCoder {
+namespace TheKiwiCoder
+{
     [CreateAssetMenu()]
-    public class BehaviourTree : ScriptableObject {
+    public class BehaviourTree : ScriptableObject
+    {
 
         [SerializeReference]
         public RootNode rootNode;
@@ -20,56 +22,65 @@ namespace TheKiwiCoder {
 
         public Blackboard blackboard = new Blackboard();
 
-#region  EditorProperties 
+        #region  EditorProperties 
         public Vector3 viewPosition = new Vector3(600, 300);
         public Vector3 viewScale = Vector3.one;
-#endregion
+        #endregion
 
-        public BehaviourTree() {
+        public BehaviourTree()
+        {
             rootNode = new RootNode();
             nodes.Add(rootNode);
         }
 
-        public Node.State Update() {
-            if (rootNode.state == Node.State.Running) {
-                treeState = rootNode.Update();
-            }
+        public Node.State Update()
+        {
+            treeState = rootNode.Update();
             return treeState;
         }
 
-        public static List<Node> GetChildren(Node parent) {
+        public static List<Node> GetChildren(Node parent)
+        {
             List<Node> children = new List<Node>();
 
-            if (parent is DecoratorNode decorator && decorator.child != null) {
+            if (parent is DecoratorNode decorator && decorator.child != null)
+            {
                 children.Add(decorator.child);
             }
 
-            if (parent is RootNode rootNode && rootNode.child != null) {
+            if (parent is RootNode rootNode && rootNode.child != null)
+            {
                 children.Add(rootNode.child);
             }
 
-            if (parent is CompositeNode composite) {
+            if (parent is CompositeNode composite)
+            {
                 return composite.children;
             }
 
             return children;
         }
 
-        public static void Traverse(Node node, System.Action<Node> visiter) {
-            if (node != null) {
+        public static void Traverse(Node node, System.Action<Node> visiter)
+        {
+            if (node != null)
+            {
                 visiter.Invoke(node);
                 var children = GetChildren(node);
                 children.ForEach((n) => Traverse(n, visiter));
             }
         }
 
-        public BehaviourTree Clone() {
+        public BehaviourTree Clone()
+        {
             BehaviourTree tree = Instantiate(this);
             return tree;
         }
 
-        public void Bind(Context context) {
-            Traverse(rootNode, node => {
+        public void Bind(Context context)
+        {
+            Traverse(rootNode, node =>
+            {
                 node.context = context;
                 node.blackboard = blackboard;
             });

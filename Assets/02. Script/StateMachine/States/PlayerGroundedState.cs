@@ -13,12 +13,14 @@ public class PlayerGroundedState : PlayerMovementState
     {
         base.Enter();
 
-
+        StartAnimation(stateMachine.player.animationdata.groundedParameterHash);
     }
 
     public override void Exit()
     {
         base.Exit();
+
+        StopAnimation(stateMachine.player.animationdata.groundedParameterHash);
     }
 
     public override void PhysicsUpdate()
@@ -91,7 +93,7 @@ public class PlayerGroundedState : PlayerMovementState
 
     protected virtual void OnJumpStarted(InputAction.CallbackContext context)
     {
-        //stateMachine.ChangeState(stateMachine.jumpState);
+        stateMachine.ChangeState(stateMachine.jumpState);
     }
 
     protected override void OnMovementPerformed(InputAction.CallbackContext context)

@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0f3c661ecfdf06488cee7577d4979e9, type: 3}
   m_Name: Monster1_Action_Idle
   m_EditorClassIdentifier: 
-  state: 0
+  state: 2
   started: 0
+  blackboard: {fileID: 0}

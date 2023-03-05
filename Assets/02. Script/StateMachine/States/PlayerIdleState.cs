@@ -19,7 +19,7 @@ public class PlayerIdleState : PlayerGroundedState
 
         StartAnimation(stateMachine.player.animationdata.idleParameterHash);
 
-        //stateMachine.player.reusableData.CurrentJumpForce = airborneData.jumpData.stationaryForce;
+        stateMachine.player.reusableData.CurrentJumpForce = airborneData.stationaryForce;
 
         ResetVelocity();
     }

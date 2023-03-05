@@ -27,6 +27,6 @@ public class PlayerAirborneState : PlayerMovementState
     // 점프 후 랜딩을 할지 안할지 정해야한다.
     protected override void OnContactWithGround(Collider collider)
     {
-        //stateMachine.ChangeState(stateMachine.lightLandingState);
+        stateMachine.ChangeState(stateMachine.landingState);
     }
 }

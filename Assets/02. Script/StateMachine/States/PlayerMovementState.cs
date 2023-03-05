@@ -13,6 +13,7 @@ public class PlayerMovementState : IState
     {
         stateMachine = playerStateMachine;
         groundedData = stateMachine.player.playerData.groundedData;
+        airborneData = stateMachine.player.playerData.airborneData;
 
         InitializeData();
     }
@@ -43,6 +44,24 @@ public class PlayerMovementState : IState
 
     public virtual void OnAnimationTransitionEvent()
     {
+    }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (stateMachine.player.IsGroundLayer(collision.gameObject.layer))
+        {
+            OnContactWithGround(collision.collider);
+            return;
+        }
+    }
+
+    public void OnCollisionExit(Collision collision)
+    {
+        if (stateMachine.player.IsGroundLayer(collision.gameObject.layer))
+        {
+            OnContactWithGroundExited(collision.collider);
+            return;
+        }
     }
 
     public virtual void OnTriggerEnter(Collider collider)
@@ -396,5 +415,5 @@ public class PlayerMovementState : IState
     private void OnMouseMovementStarted(InputAction.CallbackContext context)
     {
     }
-    #endregion    
+    #endregion
 }

@@ -21,7 +21,7 @@ public class PlayerRunState : PlayerGroundedState
         StartAnimation(stateMachine.player.animationdata.movingParameterHash);
         StartAnimation(stateMachine.player.animationdata.runParameterHash);
 
-        //stateMachine.player.reusableData.CurrentJumpForce = airborneData.jumpData.mediumForce;
+        stateMachine.player.reusableData.CurrentJumpForce = airborneData.mediumForce;
 
         startTime = Time.time;
     }
