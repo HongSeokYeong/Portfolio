@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <Style src="project://database/Assets/Editor/KeyEntry.uss?fileID=7433441132597879392&amp;guid=3e231a7542777ee4fbf87f93e93df3aa&amp;type=3#KeyEntry" />
+    <ui:VisualElement name="keyBackground" focusable="true" class="key-Background" style="background-color: rgb(56, 56, 56);">
+        <ui:Label text="Label" display-tooltip-when-elided="true" name="keyName" tabindex="-1" picking-mode="Ignore" style="-unity-font-style: bold; font-size: 10px; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; -unity-text-align: upper-center; width: auto; height: auto; align-items: stretch; position: absolute;" />
+        <ui:Button display-tooltip-when-elided="true" name="keyButton" picking-mode="Ignore" class="keyButton" style="width: 150px; position: absolute; left: auto; align-items: stretch; justify-content: flex-start; align-self: center; background-color: rgba(255, 255, 255, 0); border-left-color: rgba(149, 149, 149, 0); border-right-color: rgba(149, 149, 149, 0); border-top-color: rgba(149, 149, 149, 0); border-bottom-color: rgba(149, 149, 149, 0); border-left-width: 1px; border-right-width: 1px; border-top-width: 1px; border-bottom-width: 1px; border-top-left-radius: 2px; border-bottom-left-radius: 2px; border-top-right-radius: 2px; border-bottom-right-radius: 2px; bottom: auto; height: auto;" />
+    </ui:VisualElement>
+</ui:UXML>
