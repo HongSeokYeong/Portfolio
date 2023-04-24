@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "RootNode", menuName = "BehaviourTree/RootNode")]
-public class RootNode : Node
+public class RootNode :Node
 {
     public Node childNode;
 

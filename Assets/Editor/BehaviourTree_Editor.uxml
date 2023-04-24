@@ -1,0 +1,24 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Assets/Editor/BehaviourTree_Editor.uss?fileID=7433441132597879392&amp;guid=c10944de77a4f7044b9d364e47577f31&amp;type=3#BehaviourTree_Editor" />
+    <uie:Toolbar>
+        <uie:ToolbarMenu tabindex="-1" display-tooltip-when-elided="true" text="Assets" />
+    </uie:Toolbar>
+    <SplitView fixed-pane-initial-dimension="300">
+        <ui:VisualElement name="left-panel" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: column; flex-shrink: 0; width: 626px; height: 599px;">
+            <SplitView orientation="Vertical" fixed-pane-initial-dimension="217">
+                <ui:VisualElement name="inspector-container" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+                    <ui:Label tabindex="-1" text="Inspector" display-tooltip-when-elided="true" />
+                    <InspectorView name="InspectorView" style="height: 600px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0);" />
+                </ui:VisualElement>
+                <ui:VisualElement name="blackboard-container" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+                    <ui:Label tabindex="-1" text="BlackBoard" display-tooltip-when-elided="true" />
+                    <ui:IMGUIContainer />
+                </ui:VisualElement>
+            </SplitView>
+        </ui:VisualElement>
+        <ui:VisualElement name="right-panel" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-shrink: 0; height: 753px; align-items: stretch; align-self: stretch; flex-direction: column; width: 487px;">
+            <ui:Label tabindex="-1" text="Tree View" display-tooltip-when-elided="true" />
+            <BehaviourTreeView focusable="true" name="BehaviourTreeView" style="flex-grow: 1;" />
+        </ui:VisualElement>
+    </SplitView>
+</ui:UXML>

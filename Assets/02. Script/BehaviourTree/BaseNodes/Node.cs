@@ -4,10 +4,13 @@ using UnityEngine;
 using System;
 using System.Reflection;
 
-public abstract class Node : ScriptableObject
+[Serializable]
+public abstract class Node
 {
-    public E_State state;
-    public bool started = false;
+    [HideInInspector] public E_State state;
+    [HideInInspector] public bool started = false;
+    [HideInInspector] public string guid;
+    [HideInInspector] public Vector2 position;
 
     // Context는 각 오브젝트에 맞게 새로 만들어야 할것 같다
     // ex) OrcContext, TrollContext 등등
@@ -17,9 +20,11 @@ public abstract class Node : ScriptableObject
     // ex) OrcBlackBoard, TrollBlackBoard
     [HideInInspector] public BlackBoard blackboard;
 
+    [TextArea] public string description;
+
     public E_State Update()
     {
-        if(!started)
+        if (!started)
         {
             NodeStart();
             started = true;
@@ -27,7 +32,7 @@ public abstract class Node : ScriptableObject
 
         state = NodeUpdate();
 
-        if(state != E_State.Running)
+        if (state != E_State.Running)
         {
             NodeStop();
             started = false;
@@ -46,7 +51,6 @@ public abstract class Node : ScriptableObject
     //        node.OnStop();
     //    });
     //}
-
 
     public abstract void NodeStart();
     public abstract void NodeStop();

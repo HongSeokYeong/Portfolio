@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 982615b4dbbdcf64db38cca0a850eb7d, type: 3}
+  m_Name: BlackBoard
+  m_EditorClassIdentifier: 
+  keys:
+  - rid: 5925273047946493982
+  - rid: 5925273047946493983
+  - rid: 5925273047946493984
+  - rid: 5925273114256605184
+  - rid: 5925273114256605185
+  references:
+    version: 2
+    RefIds:
+    - rid: 5925273047946493982
+      type: {class: BlackBoardKeyType_Bool, ns: , asm: Assembly-CSharp}
+      data:
+        keyCategory: 
+        keyName: 123
+        keyDescription: 
+        keySync: 0
+        keyIsLocal: 0
+        guid: 7c9ffa08bf451174cb549e2efcbeca2a
+        value: 0
+    - rid: 5925273047946493983
+      type: {class: BlackBoardKeyType_Int, ns: , asm: Assembly-CSharp}
+      data:
+        keyCategory: 
+        keyName: jhfd
+        keyDescription: 
+        keySync: 0
+        keyIsLocal: 0
+        guid: 55a9b5043d109dd4f977db9bee3c0c57
+        value: 0
+    - rid: 5925273047946493984
+      type: {class: BlackBoardKeyType_Float, ns: , asm: Assembly-CSharp}
+      data:
+        keyCategory: 
+        keyName: 123
+        keyDescription: 
+        keySync: 0
+        keyIsLocal: 0
+        guid: c34dbfadafbc49742b34014b3d41afa4
+        value: 0
+    - rid: 5925273114256605184
+      type: {class: BlackBoardKeyType_Vector3, ns: , asm: Assembly-CSharp}
+      data:
+        keyCategory: 
+        keyName: 
+        keyDescription: 
+        keySync: 0
+        keyIsLocal: 0
+        guid: 9d215b0f229878a4586f4874beee6631
+        value: {x: 0, y: 0, z: 0}
+    - rid: 5925273114256605185
+      type: {class: BlackBoardKeyType_Int, ns: , asm: Assembly-CSharp}
+      data:
+        keyCategory: 
+        keyName: 
+        keyDescription: 
+        keySync: 0
+        keyIsLocal: 0
+        guid: 95af6b2b2598c4f4fb8778eba54fe547
+        value: 0

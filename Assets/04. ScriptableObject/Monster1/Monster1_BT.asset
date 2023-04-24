@@ -12,6 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa73fd77b7553524592892dfa25c2266, type: 3}
   m_Name: Monster1_BT
   m_EditorClassIdentifier: 
-  blackBoard: {fileID: 11400000, guid: eac2165bc3a9dd64dae8f7a09d8fd55a, type: 2}
-  rootNode: {fileID: 11400000, guid: b519bd991fc6f5549928c1253e5bc837, type: 2}
+  blackBoard: {fileID: 11400000, guid: 7d3acd864c446534a9ccfc2c80963c0d, type: 2}
+  rootNode:
+    rid: 5925272979483918340
+  nodes:
+  - rid: 5925272979483918340
   behaviourTreeState: 2
+  references:
+    version: 2
+    RefIds:
+    - rid: 5925272979483918340
+      type: {class: RootNode, ns: , asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: 
+        position: {x: 0, y: 0}
+        blackboard: {fileID: 0}
+        description: 

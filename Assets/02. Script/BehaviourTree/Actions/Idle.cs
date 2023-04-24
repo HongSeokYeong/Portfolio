@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Idle", menuName = "BehaviourTree/ActionNode/Idle")]
 public class Idle : ActionNode
 {
     public override void NodeStart()

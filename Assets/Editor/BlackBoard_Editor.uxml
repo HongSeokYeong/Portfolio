@@ -1,0 +1,21 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Assets/Editor/BlackBoard_Editor.uss?fileID=7433441132597879392&amp;guid=78c75b9c8830a1b45adade69ee03c5f0&amp;type=3#BlackBoard_Editor" />
+    <uie:Toolbar>
+        <uie:ToolbarButton text="NewKey" display-tooltip-when-elided="true" name="toolbar-NewKey" />
+    </uie:Toolbar>
+    <SplitView picking-mode="Ignore" fixed-pane-initial-dimension="300">
+        <ui:VisualElement name="leftPanel" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 100px; flex-shrink: 0; justify-content: flex-start; align-items: stretch; align-self: auto;">
+            <ui:Foldout text="KEYS" view-data-key="keys-foldout" name="keys-foldout" focusable="false" class="foldout" style="border-top-left-radius: 0; border-bottom-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); background-color: rgb(70, 70, 70); color: rgb(210, 210, 210); font-size: 12px; align-self: auto; justify-content: flex-start; align-items: stretch; flex-grow: 0; flex-shrink: 1; flex-wrap: nowrap; flex-direction: column; position: relative;">
+                <KeyElement name="KeyList" class="list-element" style="background-color: rgb(56, 56, 56);" />
+            </ui:Foldout>
+        </ui:VisualElement>
+        <ui:VisualElement name="rightPanel" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+            <ui:Foldout text="KEY DETAIL" view-data-key="key-detail-foldout" name="key-detail-foldout" style="background-color: rgb(70, 70, 70);">
+                <ui:Label tabindex="-1" text="KeyType" display-tooltip-when-elided="true" picking-mode="Ignore" style="padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; margin-left: 3px; margin-right: 3px; margin-top: 1px; margin-bottom: 1px; align-items: flex-start; align-self: flex-start; position: relative;" />
+                <ui:Label tabindex="-1" text="Label" display-tooltip-when-elided="true" picking-mode="Ignore" name="keyType" style="align-self: auto; position: absolute; right: 0; left: 144px;" />
+                <ui:TextField picking-mode="Ignore" label="Key Name" value="filler text" name="key-detail-name" />
+                <ui:TextField picking-mode="Ignore" label="Key Description" value="filler text" name="key-detail-description" />
+            </ui:Foldout>
+        </ui:VisualElement>
+    </SplitView>
+</ui:UXML>

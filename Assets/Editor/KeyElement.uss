@@ -1,0 +1,46 @@
+.list-element {
+    background-color: rgb(0, 0, 0);
+}
+
+.list-element-item {
+    -unity-text-align: middle-left;
+    padding-left: 35px;
+    height: 20px;
+    background-color: rgb(56, 56, 56);
+}
+
+.list-element-item-icon {
+    top: 7px;
+    width: 17px;
+    height: 6px;
+    margin-left: -20px;
+    border-radius: 3px;
+}
+
+.list-element-item:hover {
+    background-color: rgb(68, 68, 68);
+}
+
+.selected.list-element-item {
+    background-color: rgb(44, 93, 135);
+}
+
+.list-element-foldout > .unity-foldout__toggle {
+    height: 20px;
+    margin: 0;
+    padding: 0 0 0 2px;
+    align-items: center;
+    -unity-font-style: bold;
+}
+
+.list-element-foldout > #unity-content {
+    margin: 0;
+}
+
+.list-element-foldout > .list-element-item {
+    padding-left: 45px;
+}
+
+.list-element-foldout > .unity-foldout__toggle:hover {
+    background-color: rgb(48, 48, 48);
+}

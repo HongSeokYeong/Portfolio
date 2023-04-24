@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "GotoPosition", menuName = "BehaviourTree/ActionNode/GotoPosition")]
 public class GotoPosition : ActionNode
 {
     public float speed = 5;
@@ -15,7 +14,7 @@ public class GotoPosition : ActionNode
     {
         context.agent.stoppingDistance = stoppingDistance;
         context.agent.speed = speed;
-        context.agent.destination = blackboard.destPosition;
+        //context.agent.destination = blackboard.destPosition;
         context.agent.updateRotation = updateRotation;
         context.agent.acceleration = acceleration;
 

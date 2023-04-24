@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-[CreateAssetMenu(fileName = "Selector", menuName = "BehaviourTree/Selector")]
 public class Selector : CompositeNode
 {
     protected int current;

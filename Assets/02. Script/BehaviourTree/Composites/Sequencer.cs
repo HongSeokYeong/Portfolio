@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-[CreateAssetMenu(fileName = "Sequencer", menuName = "BehaviourTree/Sequencer")]
 public class Sequencer : CompositeNode
 {
     protected int current;
