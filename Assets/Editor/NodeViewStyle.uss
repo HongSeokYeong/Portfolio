@@ -155,7 +155,7 @@
 }
 
 .Action #input {
-    background-color: rgb(44, 44, 44);
+    background-color: rgb(96, 46, 161);
     max-width: none;
 }
 
@@ -165,7 +165,7 @@
 }
 
 .Decorator #input {
-    background-color: rgb(124, 255, 0);
+    background-color: rgb(0, 56, 131);
 }
 
 .Composite #input {

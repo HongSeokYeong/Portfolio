@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Profiling;
 
 public class Wait : ActionNode
 {
@@ -9,9 +10,9 @@ public class Wait : ActionNode
 
     public override void NodeStart()
     {
-        Debug.Log("Wait Node");
         startTime = Time.time;
-        context.animator.SetTrigger("Idle");
+        //GetBehaviourTreeController().animator.SetTrigger("Idle");
+        GetBehaviourTreeController().animator.SetBool("Move", false);
     }
 
     public override void NodeStop()

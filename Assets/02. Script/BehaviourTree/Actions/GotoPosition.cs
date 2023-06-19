@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Profiling;
+using UnityEngine.AI;
 
 public class GotoPosition : ActionNode
 {
@@ -10,15 +12,24 @@ public class GotoPosition : ActionNode
     public float acceleration = 40.0f;
     public float tolerance = 1.0f;
 
+    public NavMeshAgent agent;
+
     public override void NodeStart()
     {
-        context.agent.stoppingDistance = stoppingDistance;
-        context.agent.speed = speed;
-        //context.agent.destination = blackboard.destPosition;
-        context.agent.updateRotation = updateRotation;
-        context.agent.acceleration = acceleration;
+        var animator = GetBehaviourTreeController().animator;
+        if (agent == null)
+        {
+            agent = GetBehaviourTreeController().agent;
+        }
 
-        context.animator.SetTrigger("Run");
+        agent.stoppingDistance = stoppingDistance;
+        agent.speed = speed;
+        agent.updateRotation = updateRotation;
+        agent.acceleration = acceleration;
+        agent.isStopped = false;
+
+        animator.SetBool("Move", true);
+        GetBehaviourTreeController().animator.SetFloat("Vertical", 1.0f);
     }
 
     public override void NodeStop()
@@ -27,21 +38,22 @@ public class GotoPosition : ActionNode
 
     public override E_State NodeUpdate()
     {
-        if (context.agent.pathPending)
-        {
-            return E_State.Running;
-        }
+        //if (agent.pathPending)
+        //{
+        //    return E_State.Running;
+        //}
 
-        if (context.agent.remainingDistance < tolerance)
+        if (agent.remainingDistance < tolerance)
         {
+            blackboard.SetValueAsBool("HasPosition", false);
             return E_State.Success;
         }
 
-        if (context.agent.pathStatus == UnityEngine.AI.NavMeshPathStatus.PathInvalid)
+        if (agent.pathStatus == NavMeshPathStatus.PathInvalid)
         {
             return E_State.Failure;
         }
 
-        return E_State.Running;
+        return E_State.Success;
     }
 }

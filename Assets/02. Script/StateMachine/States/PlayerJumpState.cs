@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerJumpState : PlayerAirborneState
 {
-    // ¹«ºê ÀÎÇ²ÀÌ zero°¡ ¾Æ´Ï¶ó¸é °è¼Ó È¸ÀüÇÏ°Ô ÇÑ´Ù.
+    // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ç²ï¿½ï¿½ zeroï¿½ï¿½ ï¿½Æ´Ï¶ï¿½ï¿½ ï¿½ï¿½ï¿½ È¸ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½Ñ´ï¿½.
     private bool shouldKeepRotating;
     private bool canStartFalling;
 
@@ -92,19 +92,19 @@ public class PlayerJumpState : PlayerAirborneState
 
         ResetVelocity();
 
-        stateMachine.player.rigidbody.AddForce(jumpForce, ForceMode.VelocityChange);
+        stateMachine.player.GetComponent<Rigidbody>().AddForce(jumpForce, ForceMode.VelocityChange);
     }
 
-    // ¾ð´ö¿¡¼­ÀÇ Á¡ÇÁ·ÂÀ» ¾ò´Â ÇÔ¼ö
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½
     //private Vector3 GetJumpForceOnSlope(Vector3 jumpForce)
     //{
-    //    // ÇÃ·¹ÀÌ¾î Ä¸½¶ ÄÝ¶óÀÌ´õÀÇ Áß¾Ó°ªÀ» ¿ùµåÁÂÇ¥·Î °¡Á®¿Â´Ù.
+    //    // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ Ä¸ï¿½ï¿½ ï¿½Ý¶ï¿½ï¿½Ì´ï¿½ï¿½ï¿½ ï¿½ß¾Ó°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç¥ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Â´ï¿½.
     //    Vector3 capsuleColliderCenterInWorldSpace = stateMachine.player.colliderUtility.capsuleColliderData.collider.bounds.center;
 
-    //    // Ä¸½¶ ÄÝ¶óÀÌ´õ À§Ä¡¿¡¼­ ¾Æ·¡ ¹æÇâÀÇ ·¹ÀÌ¸¦ »ý¼º.
+    //    // Ä¸ï¿½ï¿½ ï¿½Ý¶ï¿½ï¿½Ì´ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ï¿½ï¿½ ï¿½Æ·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½.
     //    Ray downwardsRayFromCapsuleCenter = new Ray(capsuleColliderCenterInWorldSpace, Vector3.down);
 
-    //    // ÇØ´ç ¹æÇâÀ¸·Î ·¹ÀÌ¸¦ ½ð´Ù.
+    //    // ï¿½Ø´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½.
     //    if (Physics.Raycast(downwardsRayFromCapsuleCenter, out RaycastHit hit, airborneData.jumpData.jumpToGroundRayDistance, stateMachine.player.layerData.groundLayer, QueryTriggerInteraction.Ignore))
     //    {
     //        float groundAngle = Vector3.Angle(hit.normal, -downwardsRayFromCapsuleCenter.direction);

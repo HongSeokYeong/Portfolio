@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 982615b4dbbdcf64db38cca0a850eb7d, type: 3}
+  m_Name: Enemy_BlackBoard
+  m_EditorClassIdentifier: 
+  keys:
+  - rid: 5925273047946493982
+  - rid: 5925273047946493983
+  - rid: 7042652770505064478
+  - rid: 8741735491026812935
+  - rid: 8741735491026812938
+  - rid: 8741735491026812967
+  references:
+    version: 2
+    RefIds:
+    - rid: 5925273047946493982
+      type: {class: BlackBoardKeyType_Bool, ns: , asm: Assembly-CSharp}
+      data:
+        keyCategory: 
+        keyName: HasTarget
+        keyDescription: 
+        keySync: 0
+        keyIsLocal: 0
+        guid: 7c9ffa08bf451174cb549e2efcbeca2a
+        value: 0
+    - rid: 5925273047946493983
+      type: {class: BlackBoardKeyType_Int, ns: , asm: Assembly-CSharp}
+      data:
+        keyCategory: 
+        keyName: AttackNumber
+        keyDescription: 
+        keySync: 0
+        keyIsLocal: 0
+        guid: 55a9b5043d109dd4f977db9bee3c0c57
+        value: 0
+    - rid: 7042652770505064478
+      type: {class: BlackBoardKeyType_Transform, ns: , asm: Assembly-CSharp}
+      data:
+        keyCategory: 
+        keyName: CurrentTarget
+        keyDescription: 
+        keySync: 0
+        keyIsLocal: 0
+        guid: 07961fb15e2098f4ab279df0e3ddfd64
+        value: {fileID: 0}
+    - rid: 8741735491026812935
+      type: {class: BlackBoardKeyType_Bool, ns: , asm: Assembly-CSharp}
+      data:
+        keyCategory: 
+        keyName: AttackOnTarget
+        keyDescription: 
+        keySync: 0
+        keyIsLocal: 0
+        guid: 0d41ee1045eee2f4cb2132576c684d0c
+        value: 0
+    - rid: 8741735491026812938
+      type: {class: BlackBoardKeyType_Bool, ns: , asm: Assembly-CSharp}
+      data:
+        keyCategory: 
+        keyName: GetAway
+        keyDescription: 
+        keySync: 0
+        keyIsLocal: 0
+        guid: abe3950f9ee657d4abaa72123ab8513c
+        value: 0
+    - rid: 8741735491026812967
+      type: {class: BlackBoardKeyType_Bool, ns: , asm: Assembly-CSharp}
+      data:
+        keyCategory: 
+        keyName: HasPosition
+        keyDescription: 
+        keySync: 0
+        keyIsLocal: 0
+        guid: 165db4869aa85cb4eab3423e4c7ba782
+        value: 0

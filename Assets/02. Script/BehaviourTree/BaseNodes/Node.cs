@@ -15,6 +15,8 @@ public abstract class Node
     // Context는 각 오브젝트에 맞게 새로 만들어야 할것 같다
     // ex) OrcContext, TrollContext 등등
     [HideInInspector] public Context context;
+    [HideInInspector] public BehaviourTreeController behaviourTreeController;
+    [HideInInspector] public BehaviourTree behaviourTree;
 
     // BlackBoard도 마찬가지로 각 타입에 맞는 BlackBoard를 만들수 있게 해야할것 같다.
     // ex) OrcBlackBoard, TrollBlackBoard
@@ -39,6 +41,16 @@ public abstract class Node
         }
 
         return state;
+    }
+
+    public BehaviourTree GetBehaviourTree()
+    {
+        return behaviourTree;
+    }
+
+    public BehaviourTreeController GetBehaviourTreeController()
+    {
+        return behaviourTreeController;
     }
 
     // 노드를 중단하는 재귀함수

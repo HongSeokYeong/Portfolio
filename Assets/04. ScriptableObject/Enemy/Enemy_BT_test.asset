@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa73fd77b7553524592892dfa25c2266, type: 3}
+  m_Name: Enemy_BT_test
+  m_EditorClassIdentifier: 
+  blackBoard: {fileID: 11400000, guid: 7d3acd864c446534a9ccfc2c80963c0d, type: 2}
+  rootNode:
+    rid: 5925272979483918340
+  nodes:
+  - rid: 5925272979483918340
+  - rid: 8741735400817819681
+  - rid: 8741735536385327112
+  - rid: 8741735536385327123
+  behaviourTreeState: 2
+  references:
+    version: 2
+    RefIds:
+    - rid: 5925272979483918340
+      type: {class: RootNode, ns: , asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: 
+        position: {x: 203.99997, y: -410.935}
+        behaviourTreeController: {fileID: 0}
+        behaviourTree: {fileID: 0}
+        blackboard: {fileID: 0}
+        description: 
+        childNode:
+          rid: 8741735536385327112
+    - rid: 8741735400817819681
+      type: {class: AttackAction, ns: , asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: 09b8fbec073633b47aa0c42ce8c09928
+        position: {x: 260.12097, y: 68.30017}
+        behaviourTreeController: {fileID: 0}
+        behaviourTree: {fileID: 0}
+        blackboard: {fileID: 0}
+        description: 
+        rootAnimationEnd: 0
+    - rid: 8741735536385327112
+      type: {class: Sequencer, ns: , asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: d239b7b59d52e2a48bcb6a4e8e7fc6b3
+        position: {x: 254.1211, y: -244.6998}
+        behaviourTreeController: {fileID: 0}
+        behaviourTree: {fileID: 0}
+        blackboard: {fileID: 0}
+        description: 
+        childNodeList:
+        - rid: 8741735536385327123
+    - rid: 8741735536385327123
+      type: {class: CoolDown, ns: , asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: 2bb2dfb38ca18dc4c86b96098574e297
+        position: {x: 262.1211, y: -82.69983}
+        behaviourTreeController: {fileID: 0}
+        behaviourTree: {fileID: 0}
+        blackboard: {fileID: 0}
+        description: 
+        childNode:
+          rid: 8741735400817819681
+        coolDownStart: 0
+        duration: 3

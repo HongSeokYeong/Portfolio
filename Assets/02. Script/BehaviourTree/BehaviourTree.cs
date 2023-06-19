@@ -82,12 +82,14 @@ public class BehaviourTree : ScriptableObject
     }
 
     //RootNode부터 시작해서 모든 노드에 BehaviourTree의 Context와 BlackBoard를 바인드 시킴
-    public void Bind(Context context)
+    public void Bind(Context context, BehaviourTreeController behaviourTreeController)
     {
         Traverse(rootNode, node =>
         {
-            node.context = context;
+            //node.context = context;
             node.blackboard = blackBoard;
+            node.behaviourTreeController = behaviourTreeController;
+            node.behaviourTree = this;
         });
     }
 }

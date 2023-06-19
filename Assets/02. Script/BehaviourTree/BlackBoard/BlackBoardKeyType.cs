@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Profiling;
 
 public enum E_BlackBoardCompare
 {
@@ -142,7 +143,7 @@ public abstract class BlackBoardKeyType
 public abstract class BlackBoardKeyType<T> : BlackBoardKeyType
 {
     [SerializeField]
-    public T value;
+    public T value = default;
 
     public T GetValue()
     {
@@ -161,12 +162,17 @@ public abstract class BlackBoardKeyType<T> : BlackBoardKeyType
 
     public void SetValue(T setValue)
     {
-        if (setValue == null && value != null || setValue != null && (value == null || !value.Equals(setValue)))
-        {
-            OnValueChange?.Invoke();
-        }
+        //if (setValue == null && value != null || setValue != null && (value == null || !value.Equals(setValue)))
+        //{
+        //    OnValueChange?.Invoke();
+        //}
 
         value = setValue;
+    }
+
+    public void OnValueChangeFunc()
+    {
+        OnValueChange?.Invoke();
     }
 
     public override event Action OnValueChange;

@@ -4,6 +4,7 @@ using UnityEngine;
 using System;
 using System.Linq;
 using Object = UnityEngine.Object;
+using UnityEngine.Profiling;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -46,7 +47,7 @@ public class BlackBoard : ScriptableObject
     {
         for (int i = 0; i < keys.Count; i++)
         {
-            if (keys[i].GetKeyName() == keyName)
+            if (keys[i].GetKeyName().CompareTo(keyName) == 0)
             {
                 return keys[i];
             }
@@ -72,7 +73,14 @@ public class BlackBoard : ScriptableObject
 
     public int GetValueAsInt(string keyName)
     {
-        return (GetKey(keyName) as BlackBoardKeyType_Int).GetValue();
+        Profiler.BeginSample("Profiling GetKey");
+        var key = (GetKey(keyName) as BlackBoardKeyType_Int);
+        Profiler.EndSample();
+
+        Profiler.BeginSample("Profiling Return GetValue");
+        var v = key.GetValue();
+        Profiler.EndSample();
+        return v;
     }
 
     public float GetValueAsFloat(string keyName)
@@ -100,50 +108,132 @@ public class BlackBoard : ScriptableObject
         return (GetKey(keyName) as BlackBoardKeyType_Rotation).GetValue();
     }
 
+    public Transform GetValueAsTransform(string keyName)
+    {
+        return (GetKey(keyName) as BlackBoardKeyType_Transform).GetValue();
+    }
+
     public void SetValueAsObject(string keyName, Object ObjectValue)
     {
-        (GetKey(keyName) as BlackBoardKeyType_Object).SetValue(ObjectValue);
+        var key = GetKey(keyName) as BlackBoardKeyType_Object;
+
+        if (key.GetValue() != ObjectValue)
+        {
+            key.OnValueChangeFunc();
+        }
+
+        key.SetValue(ObjectValue);
     }
 
     public void SetValueAsClass(string keyName, Type classValue)
     {
-        (GetKey(keyName) as BlackBoardKeyType_Class).SetValue(classValue);
+        var key = GetKey(keyName) as BlackBoardKeyType_Class;
+
+        if (key.GetValue() != classValue)
+        {
+            key.OnValueChangeFunc();
+        }
+
+        key.SetValue(classValue);
     }
 
     public void SetValueAsEnum(string keyName, Enum enumValue)
     {
-        (GetKey(keyName) as BlackBoardKeyType_Enum).SetValue(enumValue);
+        var key = GetKey(keyName) as BlackBoardKeyType_Enum;
+
+        if (key.GetValue() != enumValue)
+        {
+            key.OnValueChangeFunc();
+        }
+
+        key.SetValue(enumValue);
     }
 
     public void SetValueAsInt(string keyName, int IntValue)
     {
-        (GetKey(keyName) as BlackBoardKeyType_Int).SetValue(IntValue);
+        Profiler.BeginSample("Profiling GetKey");
+        var key = GetKey(keyName) as BlackBoardKeyType_Int;
+        Profiler.EndSample();
+
+        if (key.GetValue() != IntValue)
+        {
+            key.OnValueChangeFunc();
+        }
+
+        key.SetValue(IntValue);
     }
 
     public void SetValueAsFloat(string keyName, float floatValue)
     {
-        (GetKey(keyName) as BlackBoardKeyType_Float).SetValue(floatValue);
+        var key = GetKey(keyName) as BlackBoardKeyType_Float;
+
+        if (key.GetValue() != floatValue)
+        {
+            key.OnValueChangeFunc();
+        }
+
+        key.SetValue(floatValue);
     }
 
     public void SetValueAsBool(string keyName, bool BoolValue)
     {
-        (GetKey(keyName) as BlackBoardKeyType_Bool).SetValue(BoolValue);
+        var key = GetKey(keyName) as BlackBoardKeyType_Bool;
+
+        if (key.GetValue() != BoolValue)
+        {
+            key.OnValueChangeFunc();
+        }
+
+        key.SetValue(BoolValue);
     }
 
     public void SetValueAsString(string keyName, string stringValue)
     {
-        (GetKey(keyName) as BlackBoardKeyType_String).SetValue(stringValue);
+        var key = GetKey(keyName) as BlackBoardKeyType_String;
+
+        if (key.GetValue() != stringValue)
+        {
+            key.OnValueChangeFunc();
+        }
+
+        key.SetValue(stringValue);
     }
 
     public void SetValueAsVector(string keyName, Vector3 vectorValue)
     {
-        (GetKey(keyName) as BlackBoardKeyType_Vector3).SetValue(vectorValue);
+        var key = GetKey(keyName) as BlackBoardKeyType_Vector3;
+
+        if (key.GetValue() != vectorValue)
+        {
+            key.OnValueChangeFunc();
+        }
+
+        key.SetValue(vectorValue);
     }
 
 
-    public void SetValueAsRotator(string keyName, Quaternion vectorValue)
+    public void SetValueAsRotator(string keyName, Quaternion quaternionValue)
     {
-        (GetKey(keyName) as BlackBoardKeyType_Rotation).SetValue(vectorValue);
+        var key = GetKey(keyName) as BlackBoardKeyType_Rotation;
+
+        if (key.GetValue() != quaternionValue)
+        {
+            key.OnValueChangeFunc();
+        }
+
+        key.SetValue(quaternionValue);
+    }
+
+    public void SetValueAsTransform(string keyName, Transform transformValue)
+    {
+        var key = GetKey(keyName) as BlackBoardKeyType_Transform;
+
+        if (key.GetValue() != transformValue)
+        {
+            key.OnValueChangeFunc();
+        }
+
+        key.SetValue(transformValue);
     }
     #endregion
 }

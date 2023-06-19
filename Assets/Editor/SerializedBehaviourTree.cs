@@ -19,8 +19,8 @@ public class SerializedBehaviourTree
     const string nodesProperty = "nodes";
     const string guidProperty = "guid";
     const string blackboardProperty = "blackBoard";
-    const string childProperty = "child";
-    const string childrenProperty = "children";
+    const string childProperty = "childNode";
+    const string childrenProperty = "childNodeList";
     const string positionProperty = "position";
     const string viewTransformPositionProperty = "viewPosition";
     const string viewTransformScaleProperty = "viewScale";

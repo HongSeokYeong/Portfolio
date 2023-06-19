@@ -9,8 +9,8 @@ public class PlayerIdleState : PlayerGroundedState
     }
 
     #region IState Methods
-    // ¾ÆÀÌµé ½ºÅ×ÀÌÆ®·Î ÁøÀÔÇÏ¸é ÀÌµ¿¼Óµµ º¯È­°ªÀ» 0À¸·Î ¼¼ÆÃÇÑ´Ù.
-    // ¸®Áöµå ¹ÙµðÀÇ ¼Óµµ¸¦ 0À¸·Î ¸®¼ÂÇÑ´Ù.
+    // ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ ï¿½Ìµï¿½ï¿½Óµï¿½ ï¿½ï¿½È­ï¿½ï¿½ï¿½ï¿½ 0ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ùµï¿½ï¿½ï¿½ ï¿½Óµï¿½ï¿½ï¿½ 0ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
     public override void Enter()
     {
         stateMachine.player.reusableData.movementSpeedModifier = 0f;
@@ -31,13 +31,14 @@ public class PlayerIdleState : PlayerGroundedState
         StopAnimation(stateMachine.player.animationdata.idleParameterHash);
     }
 
-    // ¾ÆÀÌµé ½ºÅ×ÀÌÆ®¿¡¼­´Â ÀÌµ¿Å°°¡ ÀÔ·ÂµÇ±æ ±â´Ù·È´Ù°¡
-    // ÀÌµ¿Å°°¡ ÀÔ·ÂµÇ¸é ÀÌµ¿ ½ºÅ×ÀÌÆ®·Î ³Ñ±ä´Ù.
+    // ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½Å°ï¿½ï¿½ ï¿½Ô·ÂµÇ±ï¿½ ï¿½ï¿½Ù·È´Ù°ï¿½
+    // ï¿½Ìµï¿½Å°ï¿½ï¿½ ï¿½Ô·ÂµÇ¸ï¿½ ï¿½Ìµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½Ñ±ï¿½ï¿½.
     public override void Update()
     {
         base.Update();
 
-        stateMachine.player.animator.SetFloat("MoveSpeed", stateMachine.player.rigidbody.velocity.magnitude, 0.25f, Time.deltaTime);
+        stateMachine.player.animator.SetFloat("MoveSpeed", 0, 0.25f, Time.deltaTime);
+        //stateMachine.player.animator.SetFloat("MoveSpeed", stateMachine.player.characterController.velocity.magnitude, 0.25f, Time.deltaTime);
 
         if (stateMachine.player.reusableData.movementInput == Vector2.zero)
         {

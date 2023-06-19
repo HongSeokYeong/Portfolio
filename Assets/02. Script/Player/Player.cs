@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
 
     public LayerMask groundLayer;
 
+    // public CharacterController characterController;
     public Rigidbody rigidbody;
     public Animator animator;
 
@@ -36,7 +37,6 @@ public class Player : MonoBehaviour
 
     protected virtual void Awake()
     {
-        rigidbody = GetComponent<Rigidbody>();
         input = GetComponent<PlayerInput>();
         animator = GetComponent<Animator>();
 
@@ -112,5 +112,14 @@ public class Player : MonoBehaviour
     public bool IsGroundLayer(int layer)
     {
         return Util.ContainsLayer(groundLayer, layer);
+    }
+
+    private void OnAnimatorMove()
+    {
+        //Vector3 velocity = animator.deltaPosition;
+        //velocity.y = 0.0f;
+        //// 캐릭터 컨트롤러를 사용한다면
+        //rigidbody.Move(velocity);
+        //transform.rotation *= animator.deltaRotation;
     }
 }

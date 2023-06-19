@@ -1,0 +1,299 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa73fd77b7553524592892dfa25c2266, type: 3}
+  m_Name: Enemy_BT
+  m_EditorClassIdentifier: 
+  blackBoard: {fileID: 11400000, guid: 7d3acd864c446534a9ccfc2c80963c0d, type: 2}
+  rootNode:
+    rid: 5925272979483918340
+  nodes:
+  - rid: 5925272979483918340
+  - rid: 7042653017268289547
+  - rid: 7042653017268289551
+  - rid: 7042653017268289552
+  - rid: 7042653017268289553
+  - rid: 7042653017268289555
+  - rid: 7042653065036169216
+  - rid: 8741735400817819663
+  - rid: 8741735400817819665
+  - rid: 8741735400817819679
+  - rid: 8741735400817819681
+  - rid: 8741735400817819710
+  - rid: 8741735400817819712
+  - rid: 8741735491026812979
+  - rid: 8741735511810637883
+  - rid: 8741735536385327123
+  - rid: 8741735582666588181
+  - rid: 8741735582666588213
+  behaviourTreeState: 2
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 5925272979483918340
+      type: {class: RootNode, ns: , asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: 
+        position: {x: 203.99997, y: -410.935}
+        behaviourTreeController: {fileID: 0}
+        behaviourTree: {fileID: 0}
+        blackboard: {fileID: 0}
+        description: 
+        childNode:
+          rid: 8741735400817819679
+    - rid: 7042653017268289547
+      type: {class: SearchPosition, ns: , asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: 1d7f476c332730f43827b97eb5069a2a
+        position: {x: -358.36, y: 211}
+        behaviourTreeController: {fileID: 0}
+        behaviourTree: {fileID: 0}
+        blackboard: {fileID: 0}
+        description: 
+        randomRange: {x: 10, y: 10}
+    - rid: 7042653017268289551
+      type: {class: Sequencer, ns: , asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: fa1bae84dfba63543bbbc569a2b94e13
+        position: {x: -98, y: 17.500044}
+        behaviourTreeController: {fileID: 0}
+        behaviourTree: {fileID: 0}
+        blackboard: {fileID: 0}
+        description: "\uC774\uB3D9 \uBC0F \uC801 \uD655\uC778 \uC2DC\uD000\uC2A4"
+        childNodeList:
+        - rid: 7042653017268289547
+        - rid: 7042653017268289552
+        - rid: 7042653017268289553
+        - rid: 7042653017268289555
+    - rid: 7042653017268289552
+      type: {class: GotoPosition, ns: , asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: 41d6fe4b12aac3c4c8c8a9859ffff724
+        position: {x: -181, y: 203}
+        behaviourTreeController: {fileID: 0}
+        behaviourTree: {fileID: 0}
+        blackboard: {fileID: 0}
+        description: 
+        speed: 1
+        stoppingDistance: 0.1
+        updateRotation: 1
+        acceleration: 40
+        tolerance: 0.5
+        agent: {fileID: 0}
+    - rid: 7042653017268289553
+      type: {class: SearchInSightAction, ns: , asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: d6cb5a4479d0acd4f813b8174bb5e010
+        position: {x: -4, y: 206}
+        behaviourTreeController: {fileID: 0}
+        behaviourTree: {fileID: 0}
+        blackboard: {fileID: 0}
+        description: 
+        detectionRadius: 15
+        detectionLayer:
+          serializedVersion: 2
+          m_Bits: 8
+        minDetectionAngle: -75
+        maxDetectionAngle: 75
+        tr: {fileID: 0}
+    - rid: 7042653017268289555
+      type: {class: Wait, ns: , asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: 20d810de8b563d34e84c0a3f1fccdf94
+        position: {x: 166, y: 206}
+        behaviourTreeController: {fileID: 0}
+        behaviourTree: {fileID: 0}
+        blackboard: {fileID: 0}
+        description: 
+        duration: 2
+    - rid: 7042653065036169216
+      type: {class: WalkAroundAction, ns: , asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: 44d7fed2fe032ae42a45fa011a768996
+        position: {x: 441.45248, y: 231.87}
+        behaviourTreeController: {fileID: 0}
+        behaviourTree: {fileID: 0}
+        blackboard: {fileID: 0}
+        description: 
+    - rid: 8741735400817819663
+      type: {class: Sequencer, ns: , asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: dcc3189c288fbf34c911bd8cef69b15e
+        position: {x: 716, y: 49}
+        behaviourTreeController: {fileID: 0}
+        behaviourTree: {fileID: 0}
+        blackboard: {fileID: 0}
+        description: "\uACF5\uACA9 \uBC94\uC704 \uCCB4\uD06C\uB294 \uACC4\uC18D \uC9C4\uD589\uB41C\uB2E4.\n\uACF5\uACA9
+          \uBC94\uC704 \uC548\uC5D0 \uB4E4\uC5B4\uC624\uBA74 \uACF5\uACA9 \uC561\uC158
+          \uC2E4\uD589"
+        childNodeList:
+        - rid: 8741735511810637883
+        - rid: 8741735400817819665
+        - rid: 8741735536385327123
+        - rid: 8741735582666588213
+    - rid: 8741735400817819665
+      type: {class: CheckAttackRangeAction, ns: , asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: 3cc2234d3159e2d46b7ac268b6262e7d
+        position: {x: 866.9, y: 228}
+        behaviourTreeController: {fileID: 0}
+        behaviourTree: {fileID: 0}
+        blackboard: {fileID: 0}
+        description: 
+    - rid: 8741735400817819679
+      type: {class: Selector, ns: , asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: 22b8adc2fa9fcfb41ae6be1fe6a461b9
+        position: {x: 207, y: -292}
+        behaviourTreeController: {fileID: 0}
+        behaviourTree: {fileID: 0}
+        blackboard: {fileID: 0}
+        description: 
+        childNodeList:
+        - rid: 8741735491026812979
+        - rid: 8741735400817819712
+    - rid: 8741735400817819681
+      type: {class: AttackAction, ns: , asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: 09b8fbec073633b47aa0c42ce8c09928
+        position: {x: 1088, y: 330}
+        behaviourTreeController: {fileID: 0}
+        behaviourTree: {fileID: 0}
+        blackboard: {fileID: 0}
+        description: 
+        rootAnimationEnd: 0
+    - rid: 8741735400817819710
+      type: {class: TimeCheck, ns: , asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: 1717e3d13e065c44891a86709370dba6
+        position: {x: 198, y: 6}
+        behaviourTreeController: {fileID: 0}
+        behaviourTree: {fileID: 0}
+        blackboard: {fileID: 0}
+        description: "\uC815\uD574\uC9C4 \uC2DC\uAC04\uC774 \uB418\uC5B4\uC57C \uC790\uC2DD
+          \uB178\uB4DC\uB4E4\uC774 \uC2E4\uD589\uB41C\uB2E4.\n\uAC8C\uAC78\uC74C\uC740
+          \uB79C\uB364\uC73C\uB85C \uAC00\uB054 \uC7AC\uC0DD\uC774 \uB418\uC5B4\uC57C
+          \uD55C\uB2E4."
+        childNode:
+          rid: -2
+        duration: 2
+    - rid: 8741735400817819712
+      type: {class: Sequencer, ns: , asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: f068980b09720be4abf6c3b5f97f590a
+        position: {x: 531, y: -94}
+        behaviourTreeController: {fileID: 0}
+        behaviourTree: {fileID: 0}
+        blackboard: {fileID: 0}
+        description: 
+        childNodeList:
+        - rid: 8741735582666588181
+        - rid: 8741735400817819663
+    - rid: 8741735491026812979
+      type: {class: BlackBoardCondition, ns: , asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: bb9310193ca990346bde392feacc2fa4
+        position: {x: -98, y: -130}
+        behaviourTreeController: {fileID: 0}
+        behaviourTree: {fileID: 0}
+        blackboard: {fileID: 0}
+        description: 
+        childNode:
+          rid: 7042653017268289551
+        keyName: HasTarget
+        condition: 0
+        prevState: 0
+    - rid: 8741735511810637883
+      type: {class: RotateTowardTargetAction, ns: , asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: f5e6a8c54035d32499b47f30b3c54484
+        position: {x: 653, y: 230}
+        behaviourTreeController: {fileID: 0}
+        behaviourTree: {fileID: 0}
+        blackboard: {fileID: 0}
+        description: 
+        rotationSpeed: 10
+        navMeshAgent: {fileID: 0}
+        rigidbody: {fileID: 0}
+        currentTarget: {fileID: 0}
+    - rid: 8741735536385327123
+      type: {class: CoolDown, ns: , asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: 2bb2dfb38ca18dc4c86b96098574e297
+        position: {x: 1096, y: 187}
+        behaviourTreeController: {fileID: 0}
+        behaviourTree: {fileID: 0}
+        blackboard: {fileID: 0}
+        description: 
+        childNode:
+          rid: 8741735400817819681
+        coolDownStart: 0
+        duration: 5
+    - rid: 8741735582666588181
+      type: {class: CoolDown, ns: , asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: f58cc61908b44e9428b6d70ad3973a9a
+        position: {x: 449, y: 71}
+        behaviourTreeController: {fileID: 0}
+        behaviourTree: {fileID: 0}
+        blackboard: {fileID: 0}
+        description: 
+        childNode:
+          rid: 7042653065036169216
+        coolDownStart: 0
+        duration: 2
+    - rid: 8741735582666588213
+      type: {class: ReArrangement, ns: , asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: 3245b5358f710ab499e353c8bd88ce34
+        position: {x: 1322, y: 214}
+        behaviourTreeController: {fileID: 0}
+        behaviourTree: {fileID: 0}
+        blackboard: {fileID: 0}
+        description: 

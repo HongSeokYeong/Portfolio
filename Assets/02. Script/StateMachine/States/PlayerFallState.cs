@@ -45,7 +45,7 @@ public class PlayerFallState : PlayerAirborneState
 
         //stateMachine.ChangeState(stateMachine.idleState);
 
-        // ¹ØÀÇ ÄÚµå´Â ¶³¾îÁø ³ôÀÌ¿¡ µû¶ó¼­ ÂøÁöÀÇ ¸ð¼ÇÀÌ ´Þ¶óÁö°Ô ÇÑ´Ù.
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¶ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ´ï¿½.
         if (fallDistance < airborneData.minimumDistanceToBeConsideredHardFall)
         {
             //stateMachine.ChangeState(stateMachine.lightLandingState);
@@ -76,6 +76,6 @@ public class PlayerFallState : PlayerAirborneState
 
         Vector3 limitedVelocity = new Vector3(0f, -airborneData.fallSpeedLimit - playerVerticalVelocity.y, 0f);
 
-        stateMachine.player.rigidbody.AddForce(limitedVelocity, ForceMode.VelocityChange);
+        stateMachine.player.GetComponent<Rigidbody>().AddForce(limitedVelocity, ForceMode.VelocityChange);
     }
 }
