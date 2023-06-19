@@ -20,6 +20,8 @@ MonoBehaviour:
   - rid: 8741735400817819681
   - rid: 8741735536385327112
   - rid: 8741735536385327123
+  - rid: 8741735808207421512
+  - rid: 8741735808207421513
   behaviourTreeState: 2
   references:
     version: 2
@@ -30,7 +32,7 @@ MonoBehaviour:
         state: 0
         started: 0
         guid: 
-        position: {x: 203.99997, y: -410.935}
+        position: {x: 248, y: -391}
         behaviourTreeController: {fileID: 0}
         behaviourTree: {fileID: 0}
         blackboard: {fileID: 0}
@@ -43,7 +45,7 @@ MonoBehaviour:
         state: 0
         started: 0
         guid: 09b8fbec073633b47aa0c42ce8c09928
-        position: {x: 260.12097, y: 68.30017}
+        position: {x: 640, y: 30}
         behaviourTreeController: {fileID: 0}
         behaviourTree: {fileID: 0}
         blackboard: {fileID: 0}
@@ -55,20 +57,21 @@ MonoBehaviour:
         state: 0
         started: 0
         guid: d239b7b59d52e2a48bcb6a4e8e7fc6b3
-        position: {x: 254.1211, y: -244.6998}
+        position: {x: 256, y: -238}
         behaviourTreeController: {fileID: 0}
         behaviourTree: {fileID: 0}
         blackboard: {fileID: 0}
         description: 
         childNodeList:
-        - rid: 8741735536385327123
+        - rid: 8741735808207421513
+        - rid: 8741735808207421512
     - rid: 8741735536385327123
       type: {class: CoolDown, ns: , asm: Assembly-CSharp}
       data:
         state: 0
         started: 0
         guid: 2bb2dfb38ca18dc4c86b96098574e297
-        position: {x: 262.1211, y: -82.69983}
+        position: {x: 642, y: -121}
         behaviourTreeController: {fileID: 0}
         behaviourTree: {fileID: 0}
         blackboard: {fileID: 0}
@@ -77,3 +80,36 @@ MonoBehaviour:
           rid: 8741735400817819681
         coolDownStart: 0
         duration: 3
+    - rid: 8741735808207421512
+      type: {class: RotateTowardTargetAction, ns: , asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: 7890bacec3909bc4da3088baa7faafc3
+        position: {x: 381, y: -57}
+        behaviourTreeController: {fileID: 0}
+        behaviourTree: {fileID: 0}
+        blackboard: {fileID: 0}
+        description: 
+        rotationSpeed: 10
+        navMeshAgent: {fileID: 0}
+        rigidbody: {fileID: 0}
+        currentTarget: {fileID: 0}
+    - rid: 8741735808207421513
+      type: {class: SearchInSightAction, ns: , asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: 7756315dd43d3304f9d50d1f406519b0
+        position: {x: 148, y: -57}
+        behaviourTreeController: {fileID: 0}
+        behaviourTree: {fileID: 0}
+        blackboard: {fileID: 0}
+        description: 
+        detectionRadius: 45
+        detectionLayer:
+          serializedVersion: 2
+          m_Bits: 8
+        minDetectionAngle: -45
+        maxDetectionAngle: 45
+        tr: {fileID: 0}

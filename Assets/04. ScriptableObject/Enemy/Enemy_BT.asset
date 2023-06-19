@@ -27,7 +27,6 @@ MonoBehaviour:
   - rid: 8741735400817819665
   - rid: 8741735400817819679
   - rid: 8741735400817819681
-  - rid: 8741735400817819710
   - rid: 8741735400817819712
   - rid: 8741735491026812979
   - rid: 8741735511810637883
@@ -38,8 +37,6 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
     - rid: 5925272979483918340
       type: {class: RootNode, ns: , asm: Assembly-CSharp}
       data:
@@ -188,29 +185,12 @@ MonoBehaviour:
         state: 0
         started: 0
         guid: 09b8fbec073633b47aa0c42ce8c09928
-        position: {x: 1088, y: 330}
+        position: {x: 1094, y: 329}
         behaviourTreeController: {fileID: 0}
         behaviourTree: {fileID: 0}
         blackboard: {fileID: 0}
         description: 
         rootAnimationEnd: 0
-    - rid: 8741735400817819710
-      type: {class: TimeCheck, ns: , asm: Assembly-CSharp}
-      data:
-        state: 0
-        started: 0
-        guid: 1717e3d13e065c44891a86709370dba6
-        position: {x: 198, y: 6}
-        behaviourTreeController: {fileID: 0}
-        behaviourTree: {fileID: 0}
-        blackboard: {fileID: 0}
-        description: "\uC815\uD574\uC9C4 \uC2DC\uAC04\uC774 \uB418\uC5B4\uC57C \uC790\uC2DD
-          \uB178\uB4DC\uB4E4\uC774 \uC2E4\uD589\uB41C\uB2E4.\n\uAC8C\uAC78\uC74C\uC740
-          \uB79C\uB364\uC73C\uB85C \uAC00\uB054 \uC7AC\uC0DD\uC774 \uB418\uC5B4\uC57C
-          \uD55C\uB2E4."
-        childNode:
-          rid: -2
-        duration: 2
     - rid: 8741735400817819712
       type: {class: Sequencer, ns: , asm: Assembly-CSharp}
       data:
@@ -262,7 +242,7 @@ MonoBehaviour:
         state: 0
         started: 0
         guid: 2bb2dfb38ca18dc4c86b96098574e297
-        position: {x: 1096, y: 187}
+        position: {x: 1096, y: 216}
         behaviourTreeController: {fileID: 0}
         behaviourTree: {fileID: 0}
         blackboard: {fileID: 0}
