@@ -73,13 +73,9 @@ public class BlackBoard : ScriptableObject
 
     public int GetValueAsInt(string keyName)
     {
-        Profiler.BeginSample("Profiling GetKey");
         var key = (GetKey(keyName) as BlackBoardKeyType_Int);
-        Profiler.EndSample();
 
-        Profiler.BeginSample("Profiling Return GetValue");
         var v = key.GetValue();
-        Profiler.EndSample();
         return v;
     }
 
@@ -151,9 +147,7 @@ public class BlackBoard : ScriptableObject
 
     public void SetValueAsInt(string keyName, int IntValue)
     {
-        Profiler.BeginSample("Profiling GetKey");
         var key = GetKey(keyName) as BlackBoardKeyType_Int;
-        Profiler.EndSample();
 
         if (key.GetValue() != IntValue)
         {

@@ -93,17 +93,8 @@ public class Util
         entry.eventID = triggerType;
         entry.callback.AddListener(callback);
         eventTrigger.triggers.Add(entry);
-
-        //if (eventTrigger == null)
-        //    throw new ArgumentNullException(nameof(eventTrigger));
-        //if (callback == null)
-        //    throw new ArgumentNullException(nameof(callback));
-        //EventTrigger.Entry entry = eventTrigger.triggers.Find(e => e.eventID == triggerType);
-
-        //entry.callback.AddListener(callback);
     }
 
-    // 2023-02-13
     public static bool ContainsLayer(LayerMask layerMask, int layer)
     {
         return (1 << layer & layerMask) != 0;

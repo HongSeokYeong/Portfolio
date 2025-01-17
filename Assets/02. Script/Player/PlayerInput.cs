@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-// TODO : 이 클래스의 함수들 필요한지 생각해보고 필요 없으면 삭제.
 public class PlayerInput : MonoBehaviour
 {
     public PlayerInputAction inputActions;

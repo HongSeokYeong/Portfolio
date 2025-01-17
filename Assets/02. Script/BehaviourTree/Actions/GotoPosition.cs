@@ -38,11 +38,6 @@ public class GotoPosition : ActionNode
 
     public override E_State NodeUpdate()
     {
-        //if (agent.pathPending)
-        //{
-        //    return E_State.Running;
-        //}
-
         if (agent.remainingDistance < tolerance)
         {
             blackboard.SetValueAsBool("HasPosition", false);

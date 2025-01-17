@@ -11,7 +11,6 @@ public class Wait : ActionNode
     public override void NodeStart()
     {
         startTime = Time.time;
-        //GetBehaviourTreeController().animator.SetTrigger("Idle");
         GetBehaviourTreeController().animator.SetBool("Move", false);
     }
 

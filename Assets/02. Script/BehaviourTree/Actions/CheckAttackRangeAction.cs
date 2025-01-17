@@ -23,14 +23,6 @@ public class CheckAttackRangeAction : ActionNode
 
         var distanceFromTarget = Vector3.Distance(enemyTransform.position, myTransform.position);
 
-        // 거리가 0~1이면 0, 1
-        // 거리가 1~2이면 2, 3
-        // 거리가 2~3이면 4, 5
-        //Debug.Log("거리 ==> " + distanceFromTarget);
-        // 3.3 점프어택 파워어택2
-        // 2.3 콤보어택
-        // 1.5 노말어택1 2
-        // 1.7 파워어택
         if (distanceFromTarget <= 1.5f)
         {
             blackboard.SetValueAsInt("AttackNumber", Random.Range(0, 2));

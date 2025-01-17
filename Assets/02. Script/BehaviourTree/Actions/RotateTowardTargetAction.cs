@@ -44,48 +44,6 @@ public class RotateTowardTargetAction : ActionNode
             var targetRotation = Quaternion.LookRotation(direction);
             GetBehaviourTreeController().transform.rotation = Quaternion.Slerp(GetBehaviourTreeController().transform.rotation, targetRotation, rotationSpeed);
         }
-        // rotate with pathfinding(navmesh)
-        {
-            //var relativeDirection = GetBehaviourTreeController().transform.InverseTransformDirection(navMeshAgent.desiredVelocity);
-            //Vector3 targetVelocity = rigidbody.velocity;
-
-            //navMeshAgent.enabled = true;
-            //navMeshAgent.SetDestination(currentTarget.transform.position);
-            //rigidbody.velocity = targetVelocity;
-            //GetBehaviourTreeController().transform.rotation = Quaternion.Slerp(GetBehaviourTreeController().transform.rotation, navMeshAgent.transform.rotation, rotationSpeed / Time.deltaTime);
-        }
-
-        // 턴 애니메이션 추가
-        //Vector3 targetDirection = blackboard.GetValueAsTransform("currentTarget").position - GetBehaviourTreeController().transform.position;
-        //float viewableAngle = Vector3.SignedAngle(targetDirection, GetBehaviourTreeController().transform.forward, Vector3.up);
-
-        //if (viewableAngle >= 100 && viewableAngle <= 180)
-        //{
-        //    // 루트 모션으로 뒤로돌기턴 애니메이션 재생
-        //    // animator.applyRootMotion = true;
-        //    return E_State.Success;
-        //}
-        //else if (viewableAngle <= -101 && viewableAngle >= -180)
-        //{
-        //    // 루트 모션으로 뒤로돌기턴 애니메이션 재생
-
-        //}
-        //else if (viewableAngle <= -45 && viewableAngle >= -100)
-        //{
-        //    // 루트 모션으로 오른쪽턴 애니메이션 재생
-        //    GetBehaviourTreeController().animator.applyRootMotion = true;
-        //    GetBehaviourTreeController().animator.SetTrigger("GreatSwordRightTurn");
-        //    isRotating = true;
-        //    return E_State.Success;
-        //}
-        //else if (viewableAngle >= 45 && viewableAngle <= 100)
-        //{
-        //    // 루트 모션으로 왼쪽 턴 애니메이션 재생
-        //    GetBehaviourTreeController().animator.applyRootMotion = true;
-        //    GetBehaviourTreeController().animator.SetTrigger("GreatSwordLeftTurn");
-        //    isRotating = true;
-        //    return E_State.Success;
-        //}
 
         return E_State.Success;
     }

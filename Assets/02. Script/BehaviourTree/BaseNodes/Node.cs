@@ -53,17 +53,6 @@ public abstract class Node
         return behaviourTreeController;
     }
 
-    // 노드를 중단하는 재귀함수
-    // 특정 노드에서 이 함수가 호출되면 해당 노드를 포함한 모든 자식노드들이 중단된다.
-    //public void Abort()
-    //{
-    //    BehaviourTree.Traverse(this, (node) => {
-    //        node.started = false;
-    //        node.state = State.Running;
-    //        node.OnStop();
-    //    });
-    //}
-
     public abstract void NodeStart();
     public abstract void NodeStop();
     public abstract E_State NodeUpdate();

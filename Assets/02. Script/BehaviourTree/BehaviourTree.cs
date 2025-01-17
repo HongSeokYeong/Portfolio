@@ -27,17 +27,11 @@ public class BehaviourTree : ScriptableObject
 
     public E_State BehaviourTreeUpdate()
     {
-        //if (rootNode.state == E_State.Running)
-        {
-            behaviourTreeState = rootNode.Update();
-        }
+        behaviourTreeState = rootNode.Update();
 
         return behaviourTreeState;
     }
 
-    //이 밑의 함수들은 필요한지 체크하고 사용
-    // 노드의 자식들을 모아서 반환시켜주는 함수
-    // 재귀함수에서 사용함
     public List<Node> GetChildren(Node parent)
     {
         List<Node> children = new List<Node>();
@@ -63,7 +57,7 @@ public class BehaviourTree : ScriptableObject
     //노드를 순회하면서 매개변수의 함수들을 실행시키는 함수
     public void Traverse(Node node, System.Action<Node> visiter)
     {
-        if (node !=null)
+        if (node != null)
         {
             visiter.Invoke(node);
             var children = GetChildren(node);

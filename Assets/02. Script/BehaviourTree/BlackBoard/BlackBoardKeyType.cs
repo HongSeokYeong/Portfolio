@@ -162,11 +162,6 @@ public abstract class BlackBoardKeyType<T> : BlackBoardKeyType
 
     public void SetValue(T setValue)
     {
-        //if (setValue == null && value != null || setValue != null && (value == null || !value.Equals(setValue)))
-        //{
-        //    OnValueChange?.Invoke();
-        //}
-
         value = setValue;
     }
 
